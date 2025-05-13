@@ -17,8 +17,6 @@ const ProtectedComponent = () => {
         });
 
         const accessToken = response.accessToken;
-        console.log("Actual Access Token:", accessToken);
-        localStorage.setItem("actual_access_token", accessToken);
         const res = await fetchWithToken("http://localhost:8000/api/protected", {
           headers: {
             Authorization: `Bearer ${accessToken}`,
